@@ -7,9 +7,6 @@
     <EmbeddedResource Remove="NewFolder\**" />
     <None Remove="NewFolder\**" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\sunamo\sunamo.csproj" />
-  </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>$(DefineConstants);ASYNC</DefineConstants>
   </PropertyGroup>

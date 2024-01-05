@@ -1,3 +1,5 @@
+namespace SunamoCSharp.Helpers;
+
 public partial class CSharpHelperSunamo
 {
     public static string IsAllCsprojAndSlnRightInHiearchy(string path)

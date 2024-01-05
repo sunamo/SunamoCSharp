@@ -1,3 +1,5 @@
+namespace SunamoCSharp.Helpers;
+
 public partial class CSharpHelperSunamo
 {
 static Type type = typeof(CSharpHelperSunamo);

@@ -1,3 +1,5 @@
+namespace SunamoCSharp.Args;
+
 public class CSharpGeneratorArgs
 {
     /// <summary>
