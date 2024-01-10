@@ -1,0 +1,16 @@
+﻿//global using SunamoExceptions;
+global using System.Collections.Generic;
+global using System.IO;
+global using System.Linq;
+global using System.Text;
+global using System.Threading.Tasks;
+global using System;
+global using SunamoCollections;
+global using SunamoCollectionsChangeContent;
+global using SunamoConverters.Converts;
+global using SunamoData.Data;
+global using SunamoExceptions.OnlyInSE;
+global using SunamoFileSystem;
+global using SunamoString;
+global using SunamoTextOutputGenerator;
+global using SunamoValues;
