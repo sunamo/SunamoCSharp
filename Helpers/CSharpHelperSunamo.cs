@@ -60,7 +60,7 @@ public partial class CSharpHelperSunamo
                 return false;
             }
 
-            var fn = FS.GetFileName(filePath);
+            var fn = Path.GetFileName(filePath);
 
             if (fn.EndsWith("Projects"))
             {
