@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <Version>24.1.24.1</Version>
+    <Version>24.2.1.2</Version>
     <Description>Managing C# / .NET file structures and content</Description>
   </PropertyGroup>
   <ItemGroup>
@@ -10,10 +10,11 @@
     <None Remove="NewFolder\**" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="SunamoCollectionsChangeContent" Version="24.1.14.2" />
-    <PackageReference Include="SunamoConverters" Version="24.1.23.1" />
-    <PackageReference Include="SunamoFileSystem" Version="24.1.23.1" />
-    <PackageReference Include="SunamoString" Version="24.1.22.1" />
+    <PackageReference Include="SunamoData" Version="24.2.1.1" />
+    <PackageReference Include="SunamoDictionary" Version="24.2.1.2" />
+    <PackageReference Include="SunamoExceptions" Version="24.2.1.1" />
+    <PackageReference Include="SunamoInterfaces" Version="24.2.1.2" />
+    <PackageReference Include="SunamoValues" Version="24.2.1.1" />
   </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>$(DefineConstants);ASYNC</DefineConstants>

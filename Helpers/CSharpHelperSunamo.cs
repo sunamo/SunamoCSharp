@@ -1,11 +1,18 @@
+
 namespace SunamoCSharp.Helpers;
+using SunamoData.Data;
+using SunamoInterfaces.Interfaces;
+using SunamoValues;
+using SunamoExceptions;
+using SunamoExceptions.OnlyInSE;
+
 
 public partial class CSharpHelperSunamo
 {
-    public static string IsAllCsprojAndSlnRightInHiearchy(string path)
+    public static string IsAllCsprojAndSlnRightInHiearchy(string path, ITextOutputGenerator tog)
     {
-        var csproj = FS.GetFiles(path, "*.csproj", true);
-        var sln = FS.GetFiles(path, "*.sln", true);
+        var csproj = Directory.GetFiles(path, "*.csproj", SearchOption.AllDirectories).ToList();
+        var sln = Directory.GetFiles(path, "*.sln", SearchOption.AllDirectories).ToList();
 
         //List<string> foldersWithSlnOk = new List<string>();
         List<string> foldersWithSlnKo = new List<string>();
@@ -26,12 +33,17 @@ public partial class CSharpHelperSunamo
             }
         }
 
-        sln = CAChangeContent.ChangeContent0(null, sln, FS.GetDirectoryName);
+        //sln = CAChangeContent.ChangeContent0(null, sln, Path.GetDirectoryName);
+
+        for (int i = 0; i < sln.Count; i++)
+        {
+            sln[i] = Path.GetDirectoryName(sln[i]);
+        }
 
         for (int i = csproj.Count - 1; i >= 0; i--)
         {
-            var csprojFolder = FS.GetDirectoryName(csproj[i]);
-            var slnFolder = FS.GetDirectoryName(csprojFolder);
+            var csprojFolder = Path.GetDirectoryName(csproj[i]);
+            var slnFolder = Path.GetDirectoryName(csprojFolder);
 
             if (sln.Contains(slnFolder))
             {
@@ -39,7 +51,7 @@ public partial class CSharpHelperSunamo
             }
         }
 
-        TextOutputGenerator tog = new TextOutputGenerator();
+
 
         tog.List(foldersWithSlnKo, "Sln in wrong folder:");
         tog.List(csproj, "Csproj in wrong folder:");
@@ -78,7 +90,7 @@ public partial class CSharpHelperSunamo
 
     public static FromToList DetectFromToString(string s)
     {
-        var oc = SH.ReturnOccurencesOfString(s, AllStrings.qm);
+        List<int> oc = null;// SH.ReturnOccurencesOfString(s, AllStrings.qm);
         for (int i = oc.Count - 1; i >= 0; i--)
         {
             if (s[oc[i] - 1] == AllChars.bs)
@@ -113,7 +125,20 @@ public partial class CSharpHelperSunamo
                 }
                 else
                 {
-                    indentPrevious = SH.GetWhitespaceFromBeginning(sb, line);
+                    StringBuilder sb2 = new StringBuilder();
+                    foreach (var item in line)
+                    {
+                        if (char.IsWhiteSpace(item))
+                        {
+                            sb2.Append(item);
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                    indentPrevious = sb.ToString();
+                    //indentPrevious = SH.GetWhitespaceFromBeginning(sb, line);
                 }
             }
         }
@@ -155,12 +180,12 @@ public partial class CSharpHelperSunamo
     /// </summary>
     /// <typeparam name = "T"></typeparam>
     /// <param name = "t"></param>
-    public static object DefaultValueForTypeT<T>(T t)
+    public static object DefaultValueForTypeT<T>(T t, Func<string, string> ConvertTypeShortcutFullNameToShortcut)
     {
         var type = t.GetType().FullName;
         if (type.Contains(AllStrings.dot))
         {
-            type = ConvertTypeShortcutFullName.ToShortcut(type);
+            type = ConvertTypeShortcutFullNameToShortcut(type);
         }
         #region Same seria as in Types
         switch (type)
@@ -191,11 +216,11 @@ public partial class CSharpHelperSunamo
             case "Guid":
                 return Guid.Empty;
             case "char":
-                ThrowEx.Custom("Nepodporovan\u00FD typ");
+                throw new Exception("Nepodporovan\u00FD typ");
                 break;
         }
         #endregion
-        ThrowEx.Custom("Nepodporovan\u00FD typ");
+        throw new Exception("Nepodporovan\u00FD typ");
         return null;
     }
 }

@@ -1,13 +1,16 @@
+
 namespace SunamoCSharp.Helpers;
+using SunamoValues;
+
 
 public partial class CSharpHelperSunamo
 {
     static Type type = typeof(CSharpHelperSunamo);
-    public static string DefaultValueForType(string type)
+    public static string DefaultValueForType(string type, Func<string, string> ConvertTypeShortcutFullNameToShortcut)
     {
         if (type.Contains(AllStrings.dot))
         {
-            type = ConvertTypeShortcutFullName.ToShortcut(type);
+            type = ConvertTypeShortcutFullNameToShortcut(type);
         }
         switch (type)
         {
@@ -37,13 +40,13 @@ public partial class CSharpHelperSunamo
             case "Guid":
                 return "Guid.Empty";
             case "char":
-                ThrowEx.Custom("Nepodporovan\u00FD typ");
+                throw new Exception("Nepodporovan\u00FD typ");
                 break;
             default:
                 // For types like Dictionary<int,int>
                 return "new " + type + "()";
         }
-        //ThrowEx.Custom("Nepodporovan\u00FD typ");
+        //throw new Exception("Nepodporovan\u00FD typ");
         return null;
     }
 
