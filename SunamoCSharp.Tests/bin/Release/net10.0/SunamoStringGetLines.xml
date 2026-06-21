@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SunamoStringGetLines</name>
+    </assembly>
+    <members>
+        <member name="T:SunamoStringGetLines.SHGetLines">
+            <summary>
+            Provides helper methods for splitting strings into lines with various options.
+            </summary>
+        </member>
+        <member name="M:SunamoStringGetLines.SHGetLines.GetLines(System.String,SunamoStringGetLines.SunamoArgs.GetLinesArgs)">
+            <summary>
+            Splits a string into individual lines, handling different newline formats.
+            </summary>
+            <param name="text">The text to split into lines.</param>
+            <param name="args">Optional arguments controlling line processing behavior.</param>
+            <returns>A list of individual lines.</returns>
+        </member>
+        <member name="M:SunamoStringGetLines.SHGetLines.GetLinesFromLinesWithOneRow(System.Collections.Generic.List{System.String})">
+            <summary>
+            If the list contains exactly one element, splits that element into lines. Otherwise returns the list as-is.
+            </summary>
+            <param name="list">The list of strings to process.</param>
+            <returns>A list of individual lines.</returns>
+        </member>
+        <member name="M:SunamoStringGetLines.SHGetLines.SplitByUnixNewline(System.Collections.Generic.List{System.String})">
+            <summary>
+            Splits list elements that contain Unix-style newline characters into separate elements.
+            </summary>
+            <param name="list">The list of strings to process.</param>
+        </member>
+        <member name="M:SunamoStringGetLines.SHGetLines.SplitBy(System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            Splits list elements that contain the specified delimiter into separate elements.
+            </summary>
+            <param name="list">The list of strings to split.</param>
+            <param name="delimiter">The delimiter string to split by.</param>
+        </member>
+        <member name="M:SunamoStringGetLines.SHGetLines.InsertOnIndex(System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Int32)">
+            <summary>
+            Removes the element at the specified index and inserts the replacement list at the same position.
+            </summary>
+            <param name="list">The list to modify.</param>
+            <param name="insertList">The list of elements to insert.</param>
+            <param name="index">The index at which to perform the replacement.</param>
+        </member>
+        <member name="T:SunamoStringGetLines.SunamoArgs.GetLinesArgs">
+            <summary>
+            Provides configuration arguments for the GetLines method.
+            </summary>
+        </member>
+        <member name="P:SunamoStringGetLines.SunamoArgs.GetLinesArgs.IsRemovingEmptyOrWhitespaceLines">
+            <summary>
+            Gets or sets a value indicating whether empty or whitespace-only lines should be removed from the result.
+            </summary>
+        </member>
+        <member name="T:SunamoStringGetLines._sunamo.SunamoExceptions.Exceptions">
+            <summary>
+            Provides utility methods for exception handling and stack trace analysis.
+            </summary>
+        </member>
+        <member name="M:SunamoStringGetLines._sunamo.SunamoExceptions.Exceptions.CheckBefore(System.String)">
+            <summary>
+            Prepends a prefix to a message if the prefix is not empty.
+            </summary>
+            <param name="prefix">The prefix to prepend.</param>
+            <returns>The formatted prefix string, or empty if the prefix is null or whitespace.</returns>
+        </member>
+        <member name="M:SunamoStringGetLines._sunamo.SunamoExceptions.Exceptions.PlaceOfException(System.Boolean)">
+            <summary>
+            Retrieves the place of exception from the current stack trace.
+            </summary>
+            <param name="isFillingTypeAndMethod">Whether to extract type and method name from the first non-ThrowEx frame.</param>
+            <returns>A tuple containing the type name, method name, and full stack trace text.</returns>
+        </member>
+        <member name="M:SunamoStringGetLines._sunamo.SunamoExceptions.Exceptions.TypeAndMethodName(System.String,System.String@,System.String@)">
+            <summary>
+            Extracts the type and method name from a stack trace line.
+            </summary>
+            <param name="stackTraceLine">A single stack trace line to parse.</param>
+            <param name="type">The extracted type name.</param>
+            <param name="methodName">The extracted method name.</param>
+        </member>
+        <member name="M:SunamoStringGetLines._sunamo.SunamoExceptions.Exceptions.CallingMethod(System.Int32)">
+            <summary>
+            Returns the name of the calling method at the specified stack frame depth.
+            </summary>
+            <param name="depth">The stack frame depth to look at.</param>
+            <returns>The name of the calling method.</returns>
+        </member>
+        <member name="M:SunamoStringGetLines._sunamo.SunamoExceptions.Exceptions.Custom(System.String,System.String)">
+            <summary>
+            Creates a custom exception message with an optional prefix.
+            </summary>
+            <param name="prefix">The prefix for the message.</param>
+            <param name="message">The exception message.</param>
+            <returns>The formatted exception message.</returns>
+        </member>
+        <member name="T:SunamoStringGetLines._sunamo.SunamoExceptions.ThrowEx">
+            <summary>
+            Provides methods for throwing exceptions with detailed context information.
+            </summary>
+        </member>
+        <member name="M:SunamoStringGetLines._sunamo.SunamoExceptions.ThrowEx.Custom(System.String,System.Boolean,System.String)">
+            <summary>
+            Throws a custom exception with the specified message.
+            </summary>
+            <param name="message">The exception message.</param>
+            <param name="isReallyThrowing">Whether to actually throw the exception or just return true.</param>
+            <param name="secondMessage">An optional additional message to append.</param>
+            <returns>True if the exception message was generated, false otherwise.</returns>
+        </member>
+        <member name="M:SunamoStringGetLines._sunamo.SunamoExceptions.ThrowEx.FullNameOfExecutedCode">
+            <summary>
+            Returns the full name of the currently executed code location.
+            </summary>
+            <returns>The fully qualified name of the current execution point.</returns>
+        </member>
+        <member name="M:SunamoStringGetLines._sunamo.SunamoExceptions.ThrowEx.FullNameOfExecutedCode(System.Object,System.String,System.Boolean)">
+            <summary>
+            Returns the full name of the executed code based on the type and method name.
+            </summary>
+            <param name="type">The type or object representing the declaring type.</param>
+            <param name="methodName">The name of the method.</param>
+            <param name="isFromThrowEx">Whether the call originates from ThrowEx.</param>
+            <returns>The fully qualified method name.</returns>
+        </member>
+        <member name="M:SunamoStringGetLines._sunamo.SunamoExceptions.ThrowEx.ThrowIsNotNull(System.String,System.Boolean)">
+            <summary>
+            Throws an exception if the exception message is not null.
+            </summary>
+            <param name="exception">The exception message to evaluate.</param>
+            <param name="isReallyThrowing">Whether to actually throw the exception.</param>
+            <returns>True if the exception message was not null, false otherwise.</returns>
+        </member>
+    </members>
+</doc>
