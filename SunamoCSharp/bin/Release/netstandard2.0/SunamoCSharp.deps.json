@@ -7,7 +7,7 @@
   "targets": {
     ".NETStandard,Version=v2.0": {},
     ".NETStandard,Version=v2.0/": {
-      "SunamoCSharp/26.5.18.8": {
+      "SunamoCSharp/26.6.21.9": {
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
           "SunamoDevCodeBase": "26.5.18.8"
@@ -174,7 +174,7 @@
     }
   },
   "libraries": {
-    "SunamoCSharp/26.5.18.8": {
+    "SunamoCSharp/26.6.21.9": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

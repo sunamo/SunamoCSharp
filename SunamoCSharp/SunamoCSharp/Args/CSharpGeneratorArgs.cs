@@ -1,4 +1,4 @@
-namespace SunamoDevCode.SunamoCSharp.Args;
+namespace SunamoCSharp.Args;
 
 /// <summary>
 /// Arguments for C# code generator

@@ -1,4 +1,4 @@
-global using System.Collections.Generic;
+﻿global using System.Collections.Generic;
 global using System;
 global using System.Linq;
 global using System.Text;
@@ -77,7 +77,7 @@ global using SunamoDevCode.Values;
 global using SunamoDevCode;
 global using SunamoDevCode.Args;
 global using SunamoDevCode.CodeGenerator;
-global using SunamoDevCode.SunamoCSharp;
-global using SunamoDevCode.SunamoCSharp.Args;
-global using SunamoDevCode.SunamoCSharp.Helpers;
+global using SunamoCSharp;
+global using SunamoCSharp.Args;
+global using SunamoCSharp.Helpers;
 global using SunamoDevCode.SunamoCSharp.Values;

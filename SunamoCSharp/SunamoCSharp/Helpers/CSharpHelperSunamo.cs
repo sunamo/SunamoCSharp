@@ -1,4 +1,4 @@
-namespace SunamoDevCode.SunamoCSharp.Helpers;
+namespace SunamoCSharp.Helpers;
 
 /// <summary>
 /// Helper class for C# code processing and generation
