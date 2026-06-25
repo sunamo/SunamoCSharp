@@ -6,9 +6,9 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v10.0": {
-      "SunamoCSharp/26.6.25.12": {
+      "SunamoCSharp/26.6.25.13": {
         "dependencies": {
-          "SunamoDevCodeBase": "26.6.25.2"
+          "SunamoDevCodeBase": "26.6.25.3"
         },
         "runtime": {
           "SunamoCSharp.dll": {}
@@ -68,7 +68,7 @@
           }
         }
       },
-      "SunamoDevCodeBase/26.6.25.2": {
+      "SunamoDevCodeBase/26.6.25.3": {
         "dependencies": {
           "CaseDotNet.Extensions": "0.2.46",
           "Diacritics": "4.1.4",
@@ -77,15 +77,15 @@
         },
         "runtime": {
           "SunamoDevCodeBase.dll": {
-            "assemblyVersion": "26.6.25.2",
-            "fileVersion": "26.6.25.2"
+            "assemblyVersion": "26.6.25.3",
+            "fileVersion": "26.6.25.3"
           }
         }
       }
     }
   },
   "libraries": {
-    "SunamoCSharp/26.6.25.12": {
+    "SunamoCSharp/26.6.25.13": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -132,7 +132,7 @@
       "path": "microsoft.extensions.logging.abstractions/10.0.2",
       "hashPath": "microsoft.extensions.logging.abstractions.10.0.2.nupkg.sha512"
     },
-    "SunamoDevCodeBase/26.6.25.2": {
+    "SunamoDevCodeBase/26.6.25.3": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
