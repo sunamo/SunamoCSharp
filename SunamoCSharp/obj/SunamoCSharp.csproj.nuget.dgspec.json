@@ -5,7 +5,7 @@
   },
   "projects": {
     "E:\\vs\\Projects\\PlatformIndependentNuGetPackages\\SunamoCSharp\\SunamoCSharp\\SunamoCSharp.csproj": {
-      "version": "26.6.25.11",
+      "version": "26.6.25.12",
       "restore": {
         "projectUniqueName": "E:\\vs\\Projects\\PlatformIndependentNuGetPackages\\SunamoCSharp\\SunamoCSharp\\SunamoCSharp.csproj",
         "projectName": "SunamoCSharp",
@@ -1176,7 +1176,7 @@
       }
     },
     "E:\\vs\\Projects\\PlatformIndependentNuGetPackages\\SunamoDevCodeBase\\SunamoDevCodeBase\\SunamoDevCodeBase.csproj": {
-      "version": "26.6.21.1",
+      "version": "26.6.25.2",
       "restore": {
         "projectUniqueName": "E:\\vs\\Projects\\PlatformIndependentNuGetPackages\\SunamoDevCodeBase\\SunamoDevCodeBase\\SunamoDevCodeBase.csproj",
         "projectName": "SunamoDevCodeBase",
