@@ -1,4 +1,4 @@
-namespace SunamoDevCode;
+namespace SunamoCSharp;
 
 public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerator
 {
