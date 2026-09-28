@@ -6,9 +6,9 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v10.0": {
-      "SunamoCSharp/26.6.25.13": {
+      "SunamoCSharp/26.9.28.14": {
         "dependencies": {
-          "SunamoDevCodeBase": "26.6.25.3"
+          "SunamoDevCodeBase": "26.6.25.5"
         },
         "runtime": {
           "SunamoCSharp.dll": {}
@@ -18,7 +18,8 @@
         "runtime": {
           "lib/netstandard2.1/Case.NET.dll": {
             "assemblyVersion": "0.3.36.0",
-            "fileVersion": "0.3.36.0"
+            "fileVersion": "0.3.36.0",
+            "localPath": "Case.NET.dll"
           }
         }
       },
@@ -29,7 +30,8 @@
         "runtime": {
           "lib/netstandard2.1/Case.NET.Extensions.dll": {
             "assemblyVersion": "0.2.46.0",
-            "fileVersion": "0.2.46.0"
+            "fileVersion": "0.2.46.0",
+            "localPath": "Case.NET.Extensions.dll"
           }
         }
       },
@@ -37,7 +39,8 @@
         "runtime": {
           "lib/net9.0/Diacritics.dll": {
             "assemblyVersion": "4.1.4.0",
-            "fileVersion": "4.1.4.0"
+            "fileVersion": "4.1.4.0",
+            "localPath": "Diacritics.dll"
           }
         }
       },
@@ -45,7 +48,8 @@
         "runtime": {
           "lib/net7.0/HtmlAgilityPack.dll": {
             "assemblyVersion": "1.12.4.0",
-            "fileVersion": "1.12.4.0"
+            "fileVersion": "1.12.4.0",
+            "localPath": "HtmlAgilityPack.dll"
           }
         }
       },
@@ -53,7 +57,8 @@
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.225.61305"
+            "fileVersion": "10.0.225.61305",
+            "localPath": "Microsoft.Extensions.DependencyInjection.Abstractions.dll"
           }
         }
       },
@@ -64,11 +69,12 @@
         "runtime": {
           "lib/net10.0/Microsoft.Extensions.Logging.Abstractions.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.225.61305"
+            "fileVersion": "10.0.225.61305",
+            "localPath": "Microsoft.Extensions.Logging.Abstractions.dll"
           }
         }
       },
-      "SunamoDevCodeBase/26.6.25.3": {
+      "SunamoDevCodeBase/26.6.25.5": {
         "dependencies": {
           "CaseDotNet.Extensions": "0.2.46",
           "Diacritics": "4.1.4",
@@ -77,15 +83,15 @@
         },
         "runtime": {
           "SunamoDevCodeBase.dll": {
-            "assemblyVersion": "26.6.25.3",
-            "fileVersion": "26.6.25.3"
+            "assemblyVersion": "26.6.25.5",
+            "fileVersion": "26.6.25.5"
           }
         }
       }
     }
   },
   "libraries": {
-    "SunamoCSharp/26.6.25.13": {
+    "SunamoCSharp/26.9.28.14": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -132,7 +138,7 @@
       "path": "microsoft.extensions.logging.abstractions/10.0.2",
       "hashPath": "microsoft.extensions.logging.abstractions.10.0.2.nupkg.sha512"
     },
-    "SunamoDevCodeBase/26.6.25.3": {
+    "SunamoDevCodeBase/26.6.25.5": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

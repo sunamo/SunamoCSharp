@@ -7,10 +7,10 @@
   "targets": {
     ".NETStandard,Version=v2.0": {},
     ".NETStandard,Version=v2.0/": {
-      "SunamoCSharp/26.6.25.13": {
+      "SunamoCSharp/26.9.28.14": {
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
-          "SunamoDevCodeBase": "26.6.25.3"
+          "SunamoDevCodeBase": "26.6.25.5"
         },
         "runtime": {
           "SunamoCSharp.dll": {}
@@ -20,7 +20,8 @@
         "runtime": {
           "lib/netstandard2.0/Case.NET.dll": {
             "assemblyVersion": "0.3.36.0",
-            "fileVersion": "0.3.36.0"
+            "fileVersion": "0.3.36.0",
+            "localPath": "Case.NET.dll"
           }
         }
       },
@@ -31,7 +32,8 @@
         "runtime": {
           "lib/netstandard2.0/Case.NET.Extensions.dll": {
             "assemblyVersion": "0.2.46.0",
-            "fileVersion": "0.2.46.0"
+            "fileVersion": "0.2.46.0",
+            "localPath": "Case.NET.Extensions.dll"
           }
         }
       },
@@ -39,7 +41,8 @@
         "runtime": {
           "lib/netstandard2.0/Diacritics.dll": {
             "assemblyVersion": "4.1.4.0",
-            "fileVersion": "4.1.4.0"
+            "fileVersion": "4.1.4.0",
+            "localPath": "Diacritics.dll"
           }
         }
       },
@@ -47,7 +50,8 @@
         "runtime": {
           "lib/netstandard2.0/HtmlAgilityPack.dll": {
             "assemblyVersion": "1.12.4.0",
-            "fileVersion": "1.12.4.0"
+            "fileVersion": "1.12.4.0",
+            "localPath": "HtmlAgilityPack.dll"
           }
         }
       },
@@ -58,7 +62,8 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll": {
             "assemblyVersion": "10.0.0.2",
-            "fileVersion": "10.0.225.61305"
+            "fileVersion": "10.0.225.61305",
+            "localPath": "Microsoft.Bcl.AsyncInterfaces.dll"
           }
         }
       },
@@ -66,7 +71,8 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.CSharp.dll": {
             "assemblyVersion": "4.0.5.0",
-            "fileVersion": "4.700.19.56404"
+            "fileVersion": "4.700.19.56404",
+            "localPath": "Microsoft.CSharp.dll"
           }
         }
       },
@@ -78,7 +84,8 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.225.61305"
+            "fileVersion": "10.0.225.61305",
+            "localPath": "Microsoft.Extensions.DependencyInjection.Abstractions.dll"
           }
         }
       },
@@ -92,7 +99,8 @@
         "runtime": {
           "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.225.61305"
+            "fileVersion": "10.0.225.61305",
+            "localPath": "Microsoft.Extensions.Logging.Abstractions.dll"
           }
         }
       },
@@ -100,7 +108,8 @@
         "runtime": {
           "lib/netstandard2.0/System.Buffers.dll": {
             "assemblyVersion": "4.0.2.0",
-            "fileVersion": "4.600.125.16908"
+            "fileVersion": "4.600.125.16908",
+            "localPath": "System.Buffers.dll"
           }
         }
       },
@@ -112,7 +121,8 @@
         "runtime": {
           "lib/netstandard2.0/System.Diagnostics.DiagnosticSource.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.225.61305"
+            "fileVersion": "10.0.225.61305",
+            "localPath": "System.Diagnostics.DiagnosticSource.dll"
           }
         }
       },
@@ -125,7 +135,8 @@
         "runtime": {
           "lib/netstandard2.0/System.Memory.dll": {
             "assemblyVersion": "4.0.2.0",
-            "fileVersion": "4.600.325.20307"
+            "fileVersion": "4.600.325.20307",
+            "localPath": "System.Memory.dll"
           }
         }
       },
@@ -133,7 +144,8 @@
         "runtime": {
           "lib/netstandard2.0/System.Numerics.Vectors.dll": {
             "assemblyVersion": "4.1.3.0",
-            "fileVersion": "4.600.125.16908"
+            "fileVersion": "4.600.125.16908",
+            "localPath": "System.Numerics.Vectors.dll"
           }
         }
       },
@@ -141,7 +153,8 @@
         "runtime": {
           "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
             "assemblyVersion": "6.0.0.0",
-            "fileVersion": "6.100.225.20307"
+            "fileVersion": "6.100.225.20307",
+            "localPath": "System.Runtime.CompilerServices.Unsafe.dll"
           }
         }
       },
@@ -152,11 +165,12 @@
         "runtime": {
           "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {
             "assemblyVersion": "4.2.1.0",
-            "fileVersion": "4.600.325.20307"
+            "fileVersion": "4.600.325.20307",
+            "localPath": "System.Threading.Tasks.Extensions.dll"
           }
         }
       },
-      "SunamoDevCodeBase/26.6.25.3": {
+      "SunamoDevCodeBase/26.6.25.5": {
         "dependencies": {
           "CaseDotNet.Extensions": "0.2.46",
           "Diacritics": "4.1.4",
@@ -166,15 +180,15 @@
         },
         "runtime": {
           "SunamoDevCodeBase.dll": {
-            "assemblyVersion": "26.6.25.3",
-            "fileVersion": "26.6.25.3"
+            "assemblyVersion": "26.6.25.5",
+            "fileVersion": "26.6.25.5"
           }
         }
       }
     }
   },
   "libraries": {
-    "SunamoCSharp/26.6.25.13": {
+    "SunamoCSharp/26.9.28.14": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -277,7 +291,7 @@
       "path": "system.threading.tasks.extensions/4.6.3",
       "hashPath": "system.threading.tasks.extensions.4.6.3.nupkg.sha512"
     },
-    "SunamoDevCodeBase/26.6.25.3": {
+    "SunamoDevCodeBase/26.6.25.5": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
