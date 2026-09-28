@@ -4,6 +4,12 @@ namespace SunamoCSharp;
 // CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
 public static partial class CSharpHelper
 {
+    // CsKeywordsList je internal — veřejný vstup pro konzumenty balíčku
+    /// <summary>
+    /// Initializes the C# keyword lists (public entry point, because CsKeywordsList is internal).
+    /// </summary>
+    public static void InitKeywords() => CsKeywordsList.Init();
+
     public static object DefaultValueForTypeObject(string type)
     {
         if (type.Contains("."))
