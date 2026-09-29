@@ -97,33 +97,46 @@ public class CSharpHelperSunamo
     public static void IndentAsPreviousLine(List<string> lines)
     {
         string previousIndent = string.Empty;
-        string? line = null;
-        StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < lines.Count; i++)
         {
-            line = lines[i];
-            if (line.Length > 0)
+            var line = lines[i];
+            if (line.Length == 0)
             {
-                if (!char.IsWhiteSpace(line[0]))
+                continue;
+            }
+
+            if (!char.IsWhiteSpace(line[0]))
+            {
+                lines[i] = previousIndent + line;
+                continue;
+            }
+
+            StringBuilder whitespaceBuilder = new StringBuilder();
+            bool hasNonWhitespace = false;
+            foreach (var item in line)
+            {
+                if (char.IsWhiteSpace(item))
                 {
-                    lines[i] = previousIndent + lines[i];
+                    whitespaceBuilder.Append(item);
                 }
                 else
                 {
-                    StringBuilder whitespaceBuilder = new StringBuilder();
-                    foreach (var item in line)
-                    {
-                        if (char.IsWhiteSpace(item))
-                        {
-                            whitespaceBuilder.Append(item);
-                        }
-                        else
-                        {
-                            break;
-                        }
-                    }
-                    previousIndent = stringBuilder.ToString();
+                    hasNonWhitespace = true;
+                    break;
                 }
+            }
+
+            if (hasNonWhitespace)
+            {
+                previousIndent = whitespaceBuilder.ToString();
+            }
+            else
+            {
+                // Line contains only whitespace - normalize it to a blank line and
+                // reset the indent reference, so a following unindented line (e.g. a
+                // closing brace) is not wrongly re-indented.
+                lines[i] = string.Empty;
+                previousIndent = string.Empty;
             }
         }
     }
