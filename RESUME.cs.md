@@ -12,4 +12,4 @@ Pomocné nástroje pro práci s C# zdrojovým kódem (parsování, generování)
 
 Obsahuje `CSharpHelper`/`CSharpGenerator` třídy rozdělené do několika partial souborů pro různé oblasti generování/analýzy C# kódu.
 
-Publikováno na NuGet 2026-09-29. Obsahuje dlouhodobě padající test `IndentAsPreviousLineTest` (viz historie).
+Publikováno na NuGet 2026-09-29. Dlouhodobě padající test `IndentAsPreviousLineTest` opraven 2026-09-29 (skutečná chyba byla v `SunamoString.SH.IndentAsPreviousLine`, ne v tomhle repu).
