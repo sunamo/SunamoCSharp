@@ -1,4 +1,4 @@
-namespace SunamoCSharp._sunamo;
+namespace SunamoCSharp._sunamo.SunamoDevCodeBase;
 
 /// <summary>
 /// Helpers for working with dictionaries.

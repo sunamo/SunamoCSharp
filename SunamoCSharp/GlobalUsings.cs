@@ -27,3 +27,4 @@ global using SunamoCSharp.Args;
 global using SunamoCSharp.Helpers;
 global using SunamoDevCode.SunamoCSharp.Values;
 global using SunamoCSharp._sunamo;
+global using SunamoCSharp._sunamo.SunamoDevCodeBase;

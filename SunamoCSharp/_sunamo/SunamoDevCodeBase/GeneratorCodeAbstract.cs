@@ -1,4 +1,4 @@
-namespace SunamoCSharp._sunamo;
+namespace SunamoCSharp._sunamo.SunamoDevCodeBase;
 
 /// <summary>
 /// Base class of code generators that provides indentation and braces.

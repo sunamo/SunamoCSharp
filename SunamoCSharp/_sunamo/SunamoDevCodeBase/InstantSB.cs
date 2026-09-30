@@ -1,4 +1,4 @@
-namespace SunamoCSharp._sunamo;
+namespace SunamoCSharp._sunamo.SunamoDevCodeBase;
 
 /// <summary>
 /// String builder with a delimiter between items.

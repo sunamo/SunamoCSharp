@@ -1,4 +1,4 @@
-namespace SunamoCSharp._sunamo;
+namespace SunamoCSharp._sunamo.SunamoDevCodeBase;
 
 /// <summary>
 /// Arguments for changing content of a collection.
