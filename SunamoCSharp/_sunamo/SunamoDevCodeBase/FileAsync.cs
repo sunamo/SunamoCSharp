@@ -1,4 +1,4 @@
-namespace SunamoCSharp._sunamo;
+namespace SunamoCSharp._sunamo.SunamoDevCodeBase;
 
 /// <summary>
 /// Async file helpers that forward to File.*Async on modern runtimes and provide an equivalent implementation for net48/netstandard2.0.
