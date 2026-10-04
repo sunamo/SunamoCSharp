@@ -17,6 +17,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="FluentAssertions" Version="7.0.0-alpha.3" />
     <ProjectReference Include="..\SunamoCSharp\SunamoCSharp.csproj" />
     <ProjectReference Include="..\..\SunamoStringGetLines\SunamoStringGetLines\SunamoStringGetLines.csproj" />
     <ProjectReference Include="..\..\SunamoString\SunamoString\SunamoString.csproj" />
