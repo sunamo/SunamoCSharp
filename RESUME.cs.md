@@ -17,10 +17,10 @@ origin_checked: 2026-10-01
 article_source_url: not run
 article_status: pending
 article_checked: not run
-last_build_ok: yes
+last_build_ok: no
 last_build_date: 2026-10-02
-last_tests_run_date: 2026-10-02
-covered_lines: 160
+last_tests_run_date: not run
+covered_lines: not run
 ---
 
 ## Description
