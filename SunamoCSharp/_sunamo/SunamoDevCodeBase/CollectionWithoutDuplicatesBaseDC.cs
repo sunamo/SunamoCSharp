@@ -5,12 +5,21 @@ namespace SunamoCSharp._sunamo.SunamoDevCodeBase;
 /// </summary>
 public abstract class CollectionWithoutDuplicatesBaseDC<T>
 {
+    /// <summary>
+    /// Gets or sets the collection.
+    /// </summary>
     public List<T> Collection { get; set; } = null!;
 
+    /// <summary>
+    /// Gets or sets the string representations.
+    /// </summary>
     public List<string> StringRepresentations { get; set; } = null!;
 
     private bool? _allowNull = false;
 
+    /// <summary>
+    /// The allow null.
+    /// </summary>
     public bool? AllowNull
     {
         get => _allowNull;
@@ -24,6 +33,9 @@ public abstract class CollectionWithoutDuplicatesBaseDC<T>
         }
     }
 
+    /// <summary>
+    /// Gets or sets the break on construction.
+    /// </summary>
     public static bool BreakOnConstruction { get; set; } = false;
 
     private int InitialCapacity { get; set; } = 10000;
@@ -95,6 +107,9 @@ public abstract class CollectionWithoutDuplicatesBaseDC<T>
     /// </summary>
     protected abstract bool IsComparingByString();
 
+    /// <summary>
+    /// Gets or sets the item string.
+    /// </summary>
     protected string ItemString { get; set; } = null!;
 
     /// <summary>

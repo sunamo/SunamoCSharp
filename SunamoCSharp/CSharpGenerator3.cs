@@ -2,6 +2,14 @@ namespace SunamoCSharp;
 
 public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerator
 {
+    /// <summary>
+    /// Dictionary from dictionary key value.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="dictionaryName">The dictionary name.</param>
+    /// <param name="dictionary">The dictionary.</param>
+    /// <param name="args">The args.</param>
+    /// <returns>The dictionary from dictionary key value result.</returns>
     public void DictionaryFromDictionary<Key, Value>(int tabCount, string dictionaryName, Dictionary<Key, Value> dictionary, CSharpGeneratorArgs? args = null) where Key : notnull
     {
         if (args == null)
@@ -18,6 +26,14 @@ public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerato
             GetDictionaryValuesFromDictionary(tabCount, dictionaryName, dictionary);
     }
 
+    /// <summary>
+    /// Dictionary from dictionary inner list key value.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="dictionaryName">The dictionary name.</param>
+    /// <param name="dictionary">The dictionary.</param>
+    /// <param name="args">The args.</param>
+    /// <returns>The dictionary from dictionary inner list key value result.</returns>
     public void DictionaryFromDictionaryInnerList<Key, Value>(int tabCount, string dictionaryName, Dictionary<Key, Value> dictionary, CSharpGeneratorArgs args) where Key : notnull
     {
         string? valueType = null;
@@ -31,6 +47,14 @@ public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerato
             GetDictionaryValuesFromDictionary(tabCount, dictionaryName, dictionary);
     }
 
+    /// <summary>
+    /// Get dictionary values from random value key value.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="dictionaryName">The dictionary name.</param>
+    /// <param name="keys">The keys.</param>
+    /// <param name="randomValueGenerator">The random value generator.</param>
+    /// <returns>The get dictionary values from random value key value result.</returns>
     public void GetDictionaryValuesFromRandomValue<Key, Value>(int tabCount, string dictionaryName, List<Key> keys, Func<Value> randomValueGenerator) where Key : notnull
     {
         var dictionary = new Dictionary<Key, Value>();
@@ -39,6 +63,15 @@ public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerato
         GetDictionaryValuesFromDictionary(tabCount, dictionaryName, dictionary);
     }
 
+    /// <summary>
+    /// Get dictionary values from two list key value.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="dictionaryName">The dictionary name.</param>
+    /// <param name="keys">The keys.</param>
+    /// <param name="values">The values.</param>
+    /// <param name="args">The args.</param>
+    /// <returns>The get dictionary values from two list key value result.</returns>
     public void GetDictionaryValuesFromTwoList<Key, Value>(int tabCount, string dictionaryName, List<Key> keys, List<Value> values, CSharpGeneratorArgs args) where Key : notnull
     {
         var shouldSplitKeys = false;
@@ -73,6 +106,14 @@ public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerato
         GetDictionaryValuesFromDictionary(tabCount, dictionaryName, dictionary);
     }
 
+    /// <summary>
+    /// Get dictionary values from dictionary inner list key value.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="dictionaryName">The dictionary name.</param>
+    /// <param name="dictionary">The dictionary.</param>
+    /// <param name="args">The args.</param>
+    /// <returns>The get dictionary values from dictionary inner list key value result.</returns>
     public void GetDictionaryValuesFromDictionaryInnerList<Key, Value>(int tabCount, string dictionaryName, Dictionary<Key, List<Value>> dictionary, CSharpGeneratorArgs args) where Key : notnull
     {
         Type keyType, valueType;
@@ -98,6 +139,14 @@ public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerato
         }
     }
 
+    /// <summary>
+    /// Get t key and t value key value.
+    /// </summary>
+    /// <param name="dictionary">The dictionary.</param>
+    /// <param name="keyType">The key type.</param>
+    /// <param name="valueType">The value type.</param>
+    /// <param name="firstKey">The first key.</param>
+    /// <returns>The get t key and t value key value result.</returns>
     public static void GetTKeyAndTValue<Key, Value>(Dictionary<Key, List<Value>> dictionary, out Type keyType, out Type valueType, out Key firstKey) where Key : notnull
     {
         firstKey = default!;
@@ -113,6 +162,13 @@ public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerato
         valueType = firstValue!.GetType();
     }
 
+    /// <summary>
+    /// Get dictionary values from dictionary key value.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="dictionaryName">The dictionary name.</param>
+    /// <param name="dictionary">The dictionary.</param>
+    /// <returns>The get dictionary values from dictionary key value result.</returns>
     public void GetDictionaryValuesFromDictionary<Key, Value>(int tabCount, string dictionaryName, Dictionary<Key, Value> dictionary) where Key : notnull
     {
         var firstKey = default(Key);
@@ -139,6 +195,14 @@ public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerato
         }
     }
 
+    /// <summary>
+    /// Dictionary string object value.
+    /// </summary>
+    /// <typeparam name="Value">The type Value.</typeparam>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="dictionaryName">The dictionary name.</param>
+    /// <param name="dictionary">The dictionary.</param>
+    /// <param name="args">The args.</param>
     public void DictionaryStringObject<Value>(int tabCount, string dictionaryName, Dictionary<string, Value> dictionary, CSharpGeneratorArgs args)
     {
         DictionaryFromDictionary(tabCount, dictionaryName, dictionary, args);

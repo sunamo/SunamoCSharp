@@ -1,7 +1,18 @@
 namespace SunamoCSharp;
 
+/// <summary>
+/// Represents the c sharp generator type.
+/// </summary>
 public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerator
 {
+    /// <summary>
+    /// Start class.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="accessModifier">The access modifier.</param>
+    /// <param name="isStatic">The is static.</param>
+    /// <param name="className">The class name.</param>
+    /// <param name="derivedTypes">The derived types.</param>
     public void StartClass(int tabCount, AccessModifiers accessModifier, bool isStatic, string className, params string[] derivedTypes)
     {
         AddTab(tabCount);
@@ -49,22 +60,42 @@ public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerato
         }
     }
 
+    /// <summary>
+    /// End region.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
     public void EndRegion(int tabCount)
     {
         AppendLine(tabCount, "#endregion");
     }
 
+    /// <summary>
+    /// Region.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="regionName">The region name.</param>
     public void Region(int tabCount, string regionName)
     {
         AppendLine(tabCount, "#region " + regionName);
     }
 
+    /// <summary>
+    /// Attribute.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="attributeName">The attribute name.</param>
+    /// <param name="attributeParameters">The attribute parameters.</param>
     public void Attribute(int tabCount, string attributeName, string attributeParameters)
     {
         AddTab(tabCount);
         sb.AppendLine("[" + attributeName + "(" + attributeParameters + ")]");
     }
 
+    /// <summary>
+    /// Create enum items from list.
+    /// </summary>
+    /// <param name="list">The list.</param>
+    /// <returns>The create enum items from list result.</returns>
     public static List<EnumItem> CreateEnumItemsFromList(List<string> list)
     {
         var enumItems = new List<EnumItem>(list.Count);
@@ -73,6 +104,17 @@ public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerato
         return enumItems;
     }
 
+    /// <summary>
+    /// Field.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="accessModifier">The access modifier.</param>
+    /// <param name="isStatic">The is static.</param>
+    /// <param name="variableModifiers">The variable modifiers.</param>
+    /// <param name="type">The type.</param>
+    /// <param name="name">The name.</param>
+    /// <param name="isAddingHyphensToValue">The is adding hyphens to value.</param>
+    /// <param name="value">The value.</param>
     public void Field(int tabCount, AccessModifiers accessModifier, bool isStatic, VariableModifiers variableModifiers, string type, string name, bool isAddingHyphensToValue, string value)
     {
         var initializationOption = ObjectInitializationOptions.Original;
@@ -81,6 +123,17 @@ public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerato
         Field(tabCount, accessModifier, isStatic, variableModifiers, type, name, initializationOption, value);
     }
 
+    /// <summary>
+    /// Field.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="accessModifier">The access modifier.</param>
+    /// <param name="isStatic">The is static.</param>
+    /// <param name="variableModifiers">The variable modifiers.</param>
+    /// <param name="type">The type.</param>
+    /// <param name="name">The name.</param>
+    /// <param name="initializationOption">The initialization option.</param>
+    /// <param name="value">The value.</param>
     public void Field(int tabCount, AccessModifiers accessModifier, bool isStatic, VariableModifiers variableModifiers, string type, string name, ObjectInitializationOptions initializationOption, string value)
     {
         AddTab(tabCount);
@@ -96,6 +149,16 @@ public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerato
         sb.AppendLine();
     }
 
+    /// <summary>
+    /// Field.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="accessModifier">The access modifier.</param>
+    /// <param name="isStatic">The is static.</param>
+    /// <param name="variableModifiers">The variable modifiers.</param>
+    /// <param name="type">The type.</param>
+    /// <param name="name">The name.</param>
+    /// <param name="isUsingDefaultValue">The is using default value.</param>
     public void Field(int tabCount, AccessModifiers accessModifier, bool isStatic, VariableModifiers variableModifiers, string type, string name, bool isUsingDefaultValue)
     {
         AddTab(tabCount);
@@ -116,6 +179,14 @@ public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerato
         }
     }
 
+    /// <summary>
+    /// Add into class.
+    /// </summary>
+    /// <param name="lines">The lines.</param>
+    /// <param name="insertedLines">The inserted lines.</param>
+    /// <param name="classIndex">The class index.</param>
+    /// <param name="namespaceName">The namespace name.</param>
+    /// <returns>The add into class result.</returns>
     public static List<string> AddIntoClass(List<string> lines, List<string> insertedLines, out int classIndex, string namespaceName)
     {
         classIndex = -1;
@@ -151,6 +222,10 @@ public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerato
         return lines;
     }
 
+    /// <summary>
+    /// Namespace.
+    /// </summary>
+    /// <param name="namespaceName">The namespace name.</param>
     public void Namespace(string namespaceName)
     {
         sb.AddItem("namespace" + " " + namespaceName);
@@ -182,6 +257,14 @@ public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerato
         }
     }
 
+    /// <summary>
+    /// Ctor.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="modifierType">The modifier type.</param>
+    /// <param name="constructorName">The constructor name.</param>
+    /// <param name="bodyContent">The body content.</param>
+    /// <param name="parameters">The parameters.</param>
     public void Ctor(int tabCount, ModifiersConstructor modifierType, string constructorName, string bodyContent, params string[] parameters)
     {
         AddTab(tabCount);

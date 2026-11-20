@@ -1,9 +1,18 @@
 namespace SunamoCSharp.Helpers;
 
+/// <summary>
+/// Represents the c sharp helper sunamo type.
+/// </summary>
 public class CSharpHelperSunamo
 {
     internal static Type Type = typeof(CSharpHelperSunamo);
 
+    /// <summary>
+    /// Is all csproj and sln right in hiearchy.
+    /// </summary>
+    /// <param name="path">The path.</param>
+    /// <param name="textOutputGenerator">The text output generator.</param>
+    /// <returns>The is all csproj and sln right in hiearchy result.</returns>
     public static string IsAllCsprojAndSlnRightInHiearchy(string path, TextOutputGeneratorDC textOutputGenerator)
     {
         var csprojFiles = Directory.GetFiles(path, "*.csproj", SearchOption.AllDirectories).ToList();
@@ -73,6 +82,11 @@ public class CSharpHelperSunamo
         }
     }
 
+    /// <summary>
+    /// Detect from to string.
+    /// </summary>
+    /// <param name="text">The text.</param>
+    /// <returns>The detect from to string result.</returns>
     public static FromToList DetectFromToString(string text)
     {
         List<int> quoteIndices = null!;// SH.ReturnOccurencesOfString(text, "\"");
@@ -94,6 +108,10 @@ public class CSharpHelperSunamo
         return fromToList;
     }
 
+    /// <summary>
+    /// Indent as previous line.
+    /// </summary>
+    /// <param name="lines">The lines.</param>
     public static void IndentAsPreviousLine(List<string> lines)
     {
         string previousIndent = string.Empty;
@@ -141,6 +159,11 @@ public class CSharpHelperSunamo
         }
     }
 
+    /// <summary>
+    /// Is interface.
+    /// </summary>
+    /// <param name="text">The text.</param>
+    /// <returns>The is interface result.</returns>
     public static bool IsInterface(string text)
     {
         if (text[0] == 'I')
@@ -153,11 +176,21 @@ public class CSharpHelperSunamo
         return false;
     }
 
+    /// <summary>
+    /// Replace nulled.
+    /// </summary>
+    /// <param name="text">The text.</param>
+    /// <returns>The replace nulled result.</returns>
     public static string ReplaceNulled(string text)
     {
         return text.Replace("(null)", string.Empty).Trim();
     }
 
+    /// <summary>
+    /// Shortcut for control.
+    /// </summary>
+    /// <param name="text">The text.</param>
+    /// <returns>The shortcut for control result.</returns>
     public static string ShortcutForControl(string text)
     {
         StringBuilder stringBuilder = new StringBuilder();
@@ -173,6 +206,13 @@ public class CSharpHelperSunamo
 
     // Gets default value for type T. Not compatible with default operator - must cast manually
     // https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/default-values
+    /// <summary>
+    /// Default value for type t t.
+    /// </summary>
+    /// <typeparam name="T">The type T.</typeparam>
+    /// <param name="value">The value.</param>
+    /// <param name="convertTypeShortcutFullNameToShortcut">The convert type shortcut full name to shortcut.</param>
+    /// <returns>The default value for type t t result.</returns>
     public static object DefaultValueForTypeT<T>(T value, Func<string, string> convertTypeShortcutFullNameToShortcut)
     {
         var typeName = value!.GetType().FullName;
@@ -211,6 +251,12 @@ public class CSharpHelperSunamo
         throw new Exception("Unsupported type");
     }
 
+    /// <summary>
+    /// Default value for type.
+    /// </summary>
+    /// <param name="typeName">The type name.</param>
+    /// <param name="convertTypeShortcutFullNameToShortcut">The convert type shortcut full name to shortcut.</param>
+    /// <returns>The default value for type result.</returns>
     public static string DefaultValueForType(string typeName, Func<string, string> convertTypeShortcutFullNameToShortcut)
     {
         if (typeName.Contains("."))
@@ -250,6 +296,11 @@ public class CSharpHelperSunamo
         }
     }
 
+    /// <summary>
+    /// Replace readonly to const.
+    /// </summary>
+    /// <param name="text">The text.</param>
+    /// <returns>The replace readonly to const result.</returns>
     public static string ReplaceReadonlyToConst(string text)
     {
         text = text.Replace("static readonly", "const");

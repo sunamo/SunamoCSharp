@@ -8,6 +8,11 @@ public static partial class CSharpHelper
     /// </summary>
     public static void InitKeywords() => CsKeywordsList.Init();
 
+    /// <summary>
+    /// Default value for type object.
+    /// </summary>
+    /// <param name="type">The type.</param>
+    /// <returns>The default value for type object result.</returns>
     public static object DefaultValueForTypeObject(string type)
     {
         if (type.Contains("."))
@@ -47,6 +52,12 @@ public static partial class CSharpHelper
         throw new Exception("Nepodporovaný typ");
     }
 
+    /// <summary>
+    /// Wrap with region.
+    /// </summary>
+    /// <param name="text">The text.</param>
+    /// <param name="regionName">The region name.</param>
+    /// <returns>The wrap with region result.</returns>
     public static string WrapWithRegion(string text, string regionName)
     {
         StringBuilder stringBuilder = new StringBuilder();
@@ -57,6 +68,11 @@ public static partial class CSharpHelper
         return stringBuilder.ToString();
     }
 
+    /// <summary>
+    /// Is keyword.
+    /// </summary>
+    /// <param name="con">The con.</param>
+    /// <returns>The is keyword result.</returns>
     public static bool IsKeyword(string con)
     {
         if (CsKeywordsList.Modifier.Contains(con))
@@ -117,6 +133,12 @@ public static partial class CSharpHelper
         return false;
     }
 
+    /// <summary>
+    /// Wrap with quote list.
+    /// </summary>
+    /// <param name="tValue">The t value.</param>
+    /// <param name="valueS">The value s.</param>
+    /// <returns>The wrap with quote list result.</returns>
     public static string WrapWithQuoteList(Type tValue, IList valueS)
     {
         StringBuilder stringBuilder = new StringBuilder();
@@ -130,6 +152,11 @@ public static partial class CSharpHelper
         return stringBuilder.ToString().TrimEnd(',');
     }
 
+    /// <summary>
+    /// Wrap with quote.
+    /// </summary>
+    /// <param name="tKey">The t key.</param>
+    /// <param name="keyS">The key s.</param>
     public static void WrapWithQuote(Type tKey, ref string keyS)
     {
         if (tKey == Types.StringType)

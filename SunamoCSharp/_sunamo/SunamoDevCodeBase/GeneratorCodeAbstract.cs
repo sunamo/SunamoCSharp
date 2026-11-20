@@ -6,9 +6,18 @@ namespace SunamoCSharp._sunamo.SunamoDevCodeBase;
 public abstract class GeneratorCodeAbstract
 {
     // Use ToString() instead of public access
+    /// <summary>
+    /// The final.
+    /// </summary>
     protected string Final = "";
 
+    /// <summary>
+    /// The sb.
+    /// </summary>
     protected InstantSB sb = new(" ");
+    /// <summary>
+    /// The xml doc.
+    /// </summary>
     public XmlDoc xmlDoc;
 
     /// <summary>

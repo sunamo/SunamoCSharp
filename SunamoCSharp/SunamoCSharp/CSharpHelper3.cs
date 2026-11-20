@@ -2,6 +2,12 @@ namespace SunamoCSharp;
 
 public static partial class CSharpHelper
 {
+    /// <summary>
+    /// Get ctor inner.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="values">The values.</param>
+    /// <returns>The get ctor inner result.</returns>
     public static string GetCtorInner(int tabCount, IList values)
     {
         const string assignVariable = "this.{0} = {0};";
@@ -14,6 +20,12 @@ public static partial class CSharpHelper
         return csg.ToString().Trim();
     }
 
+    /// <summary>
+    /// Get array.
+    /// </summary>
+    /// <param name="input">The input.</param>
+    /// <param name="arrayName">The array name.</param>
+    /// <returns>The get array result.</returns>
     public static string GetArray(List<string> input, string arrayName)
     {
         CSharpGenerator generator = new CSharpGenerator();
@@ -21,6 +33,12 @@ public static partial class CSharpHelper
         return generator.ToString();
     }
 
+    /// <summary>
+    /// Get list.
+    /// </summary>
+    /// <param name="input">The input.</param>
+    /// <param name="listName">The list name.</param>
+    /// <returns>The get list result.</returns>
     public static string GetList(List<string> input, string listName)
     {
         CSharpGenerator generator = new CSharpGenerator();
@@ -28,6 +46,11 @@ public static partial class CSharpHelper
         return generator.ToString();
     }
 
+    /// <summary>
+    /// Remove regions.
+    /// </summary>
+    /// <param name="lines">The lines.</param>
+    /// <returns>The remove regions result.</returns>
     public static List<string> RemoveRegions(List<string> lines)
     {
         for (int i = lines.Count - 1; i >= 0; i--)
@@ -42,11 +65,24 @@ public static partial class CSharpHelper
         return lines;
     }
 
+    /// <summary>
+    /// Get consts.
+    /// </summary>
+    /// <param name="list">The list.</param>
+    /// <param name="toCamelConvention">The to camel convention.</param>
+    /// <returns>The get consts result.</returns>
     public static string GetConsts(List<string> list, bool? toCamelConvention)
     {
         return GetConsts(null!, list, toCamelConvention);
     }
 
+    /// <summary>
+    /// Get consts.
+    /// </summary>
+    /// <param name="names">The names.</param>
+    /// <param name="list">The list.</param>
+    /// <param name="toCamelConventionFirstCharLower">The to camel convention first char lower.</param>
+    /// <returns>The get consts result.</returns>
     public static string GetConsts(List<string> names, List<string> list, bool? toCamelConventionFirstCharLower)
     {
         return GetConsts(names, list, toCamelConventionFirstCharLower, Types.StringType);
@@ -55,6 +91,14 @@ public static partial class CSharpHelper
     // A1 can be null
     // GenerateConstants - const without value
     // GetConsts - static readonly with value
+    /// <summary>
+    /// Get consts.
+    /// </summary>
+    /// <param name="names">The names.</param>
+    /// <param name="list">The list.</param>
+    /// <param name="toCamelConventionFirstCharLower">The to camel convention first char lower.</param>
+    /// <param name="type">The type.</param>
+    /// <returns>The get consts result.</returns>
     public static string GetConsts(List<string> names, List<string> list, bool? toCamelConventionFirstCharLower, Type type)
     {
         bool addHyphensToValue = true;
@@ -99,6 +143,13 @@ public static partial class CSharpHelper
 
     // GenerateConstants - const without value
     // GetConsts - static readonly with value
+    /// <summary>
+    /// Generate constants.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="changeInput">The change input.</param>
+    /// <param name="input">The input.</param>
+    /// <returns>The generate constants result.</returns>
     public static string GenerateConstants(int tabCount, Func<string, string> changeInput, List<string> input)
     {
         CSharpGenerator csg = new CSharpGenerator();
@@ -116,6 +167,12 @@ public static partial class CSharpHelper
         return csg.ToString();
     }
 
+    /// <summary>
+    /// Trim end.
+    /// </summary>
+    /// <param name="sf">The sf.</param>
+    /// <param name="toTrim">The to trim.</param>
+    /// <returns>The trim end result.</returns>
     public static List<string> TrimEnd(List<string> sf, params char[] toTrim)
     {
         for (int i = 0; i < sf.Count; i++)
@@ -128,6 +185,11 @@ public static partial class CSharpHelper
 
     // value - data type
     // key - name
+    /// <summary>
+    /// Parse fields.
+    /// </summary>
+    /// <param name="lines">The lines.</param>
+    /// <returns>The parse fields result.</returns>
     public static Dictionary<string, string> ParseFields(List<string> lines)
     {
         CA.RemoveStringsEmpty2(lines);
@@ -153,6 +215,11 @@ public static partial class CSharpHelper
     const string tProperty = @"{0} {2} = {1};
     public {0} {3} { get { return {2}; } set { {2} = value; OnPropertyChanged(" + "\"{3}\"); } }" + @"
 ";
+    /// <summary>
+    /// Generate properties.
+    /// </summary>
+    /// <param name="argument">The argument.</param>
+    /// <returns>The generate properties result.</returns>
     public static string GenerateProperties(GeneratePropertiesArgs argument)
     {
         var lines = argument.Input;
@@ -184,6 +251,12 @@ public static partial class CSharpHelper
         return stringBuilder.ToString();
     }
 
+    /// <summary>
+    /// Line with class.
+    /// </summary>
+    /// <param name="lines">The lines.</param>
+    /// <param name="mustDerive">The must derive.</param>
+    /// <returns>The line with class result.</returns>
     public static string? LineWithClass(List<string> lines, bool mustDerive)
     {
         foreach (var item in lines)

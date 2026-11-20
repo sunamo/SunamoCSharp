@@ -2,6 +2,14 @@ namespace SunamoCSharp;
 
 public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerator
 {
+    /// <summary>
+    /// List.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="genericType">The generic type.</param>
+    /// <param name="listName">The list name.</param>
+    /// <param name="list">The list.</param>
+    /// <param name="args">The args.</param>
     public void List(int tabCount, string genericType, string listName, List<string> list, CSharpGeneratorArgs? args = null)
     {
         if (args == null)
@@ -30,6 +38,11 @@ public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerato
         }
     }
 
+    /// <summary>
+    /// This.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="memberName">The member name.</param>
     public void This(int tabCount, string memberName)
     {
         Append(tabCount, "this." + memberName);
@@ -60,6 +73,13 @@ public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerato
         sb.AddItem(variableName + " = new " + className + "();");
     }
 
+    /// <summary>
+    /// Enum.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="accessModifier">The access modifier.</param>
+    /// <param name="enumName">The enum name.</param>
+    /// <param name="enumItems">The enum items.</param>
     public void Enum(int tabCount, AccessModifiers accessModifier, string enumName, List<EnumItem> enumItems)
     {
         WriteAccessModifiers(accessModifier);
@@ -91,6 +111,14 @@ public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerato
         }
     }
 
+    /// <summary>
+    /// Assign value.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="objectName">The object name.</param>
+    /// <param name="variableName">The variable name.</param>
+    /// <param name="value">The value.</param>
+    /// <param name="args">The args.</param>
     public void AssignValue(int tabCount, string objectName, string variableName, string value, CSharpGeneratorArgs args)
     {
         AddTab(tabCount);
@@ -102,6 +130,15 @@ public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerato
         sb.AppendLine();
     }
 
+    /// <summary>
+    /// Add values via add range.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="objectName">The object name.</param>
+    /// <param name="collectionName">The collection name.</param>
+    /// <param name="type">The type.</param>
+    /// <param name="values">The values.</param>
+    /// <param name="args">The args.</param>
     public void AddValuesViaAddRange(int tabCount, string objectName, string collectionName, string type, List<string> values, CSharpGeneratorArgs args)
     {
         var objectPrefix = "";
@@ -114,22 +151,53 @@ public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerato
         sb.AddItem(objectPrefix + collectionName + ".AddRange(new " + type + "[] { " + string.Join(",", values) + "});");
     }
 
+    /// <summary>
+    /// Add values via add range.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="objectName">The object name.</param>
+    /// <param name="collectionName">The collection name.</param>
+    /// <param name="type">The type.</param>
+    /// <param name="values">The values.</param>
+    /// <param name="args">The args.</param>
     public void AddValuesViaAddRange(int tabCount, string objectName, string collectionName, Type type, List<string> values, CSharpGeneratorArgs args)
     {
         AddValuesViaAddRange(tabCount, objectName, collectionName, type.FullName!, values, args);
         sb.AppendLine();
     }
 
+    /// <summary>
+    /// Dictionary number number t u.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="dictionaryName">The dictionary name.</param>
+    /// <param name="dictionary">The dictionary.</param>
+    /// <param name="args">The args.</param>
+    /// <returns>The dictionary number number t u result.</returns>
     public void DictionaryNumberNumber<T, U>(int tabCount, string dictionaryName, Dictionary<T, U> dictionary, CSharpGeneratorArgs? args = null) where T : notnull where U : notnull
     {
         DictionaryFromDictionary(tabCount, dictionaryName, dictionary, args);
     }
 
+    /// <summary>
+    /// Dictionary string string.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="dictionaryName">The dictionary name.</param>
+    /// <param name="dictionary">The dictionary.</param>
+    /// <param name="args">The args.</param>
     public void DictionaryStringString(int tabCount, string dictionaryName, Dictionary<string, string> dictionary, CSharpGeneratorArgs? args = null)
     {
         DictionaryFromDictionary(tabCount, dictionaryName, dictionary, args);
     }
 
+    /// <summary>
+    /// Dictionary string list string.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="dictionaryName">The dictionary name.</param>
+    /// <param name="dictionary">The dictionary.</param>
+    /// <param name="args">The args.</param>
     public void DictionaryStringListString(int tabCount, string dictionaryName, Dictionary<string, List<string>> dictionary, CSharpGeneratorArgs? args = null)
     {
         if (args == null)
@@ -143,6 +211,15 @@ public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerato
         }
     }
 
+    /// <summary>
+    /// Dictionary from random value key value.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="dictionaryName">The dictionary name.</param>
+    /// <param name="keys">The keys.</param>
+    /// <param name="randomValueGenerator">The random value generator.</param>
+    /// <param name="args">The args.</param>
+    /// <returns>The dictionary from random value key value result.</returns>
     public void DictionaryFromRandomValue<Key, Value>(int tabCount, string dictionaryName, List<Key> keys, Func<Value> randomValueGenerator, CSharpGeneratorArgs? args = null) where Key : notnull
     {
         if (args == null)
@@ -157,6 +234,15 @@ public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerato
         DictionaryFromDictionary(tabCount, dictionaryName, dict, args);
     }
 
+    /// <summary>
+    /// Dictionary from two list key value.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="dictionaryName">The dictionary name.</param>
+    /// <param name="keys">The keys.</param>
+    /// <param name="values">The values.</param>
+    /// <param name="args">The args.</param>
+    /// <returns>The dictionary from two list key value result.</returns>
     public void DictionaryFromTwoList<Key, Value>(int tabCount, string dictionaryName, List<Key> keys, List<Value> values, CSharpGeneratorArgs? args = null) where Key : notnull
     {
         ThrowEx.DifferentCountInListsTU("keys", keys, "values", values);

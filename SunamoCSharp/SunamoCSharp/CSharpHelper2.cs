@@ -2,6 +2,15 @@ namespace SunamoCSharp;
 
 public static partial class CSharpHelper
 {
+    /// <summary>
+    /// Get dictionary values from two list key value.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="nameDictionary">The name dictionary.</param>
+    /// <param name="keys">The keys.</param>
+    /// <param name="values">The values.</param>
+    /// <param name="argument">The argument.</param>
+    /// <returns>The get dictionary values from two list key value result.</returns>
     public static string GetDictionaryValuesFromTwoList<Key, Value>(int tabCount, string nameDictionary, List<Key> keys, List<Value> values, CSharpGeneratorArgs argument) where Key : notnull
     {
         CSharpGenerator csg = new CSharpGenerator();
@@ -9,6 +18,14 @@ public static partial class CSharpHelper
         return csg.ToString();
     }
 
+    /// <summary>
+    /// Get dictionary values from random value key value.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="nameDictionary">The name dictionary.</param>
+    /// <param name="keys">The keys.</param>
+    /// <param name="randomValue">The random value.</param>
+    /// <returns>The get dictionary values from random value key value result.</returns>
     public static string GetDictionaryValuesFromRandomValue<Key, Value>(int tabCount, string nameDictionary, List<Key> keys, Func<Value> randomValue) where Key : notnull
     {
         CSharpGenerator csg = new CSharpGenerator();
@@ -16,6 +33,12 @@ public static partial class CSharpHelper
         return csg.ToString();
     }
 
+    /// <summary>
+    /// Remove xml doc comments except summary.
+    /// </summary>
+    /// <param name="list">The list.</param>
+    /// <param name="removedAnything">The removed anything.</param>
+    /// <returns>The remove xml doc comments except summary result.</returns>
     public static string RemoveXmlDocCommentsExceptSummary(List<string> list, ref bool removedAnything)
     {
         removedAnything = false;
@@ -32,6 +55,11 @@ public static partial class CSharpHelper
         return string.Join(Environment.NewLine, list); //string.Join(Environment.NewLine, list);
     }
 
+    /// <summary>
+    /// Remove xml doc comments.
+    /// </summary>
+    /// <param name="list">The list.</param>
+    /// <returns>The remove xml doc comments result.</returns>
     public static string RemoveXmlDocComments(List<string> list)
     {
         ThrowEx.NotImplementedMethod();
@@ -46,6 +74,14 @@ public static partial class CSharpHelper
         return text;
     }
 
+    /// <summary>
+    /// Remove comments.
+    /// </summary>
+    /// <param name="listOrString">The list or string.</param>
+    /// <param name="line">The line.</param>
+    /// <param name="block">The block.</param>
+    /// <param name="keepLinesNumbers">The keep lines numbers.</param>
+    /// <returns>The remove comments result.</returns>
     public static string RemoveComments(string listOrString, bool line = true, bool block = true, bool keepLinesNumbers = false)
     {
         if (keepLinesNumbers)
@@ -111,6 +147,14 @@ public static partial class CSharpHelper
         return output;
     }
 
+    /// <summary>
+    /// Remove comments.
+    /// </summary>
+    /// <param name="listOrString">The list or string.</param>
+    /// <param name="line">The line.</param>
+    /// <param name="block">The block.</param>
+    /// <param name="keepLinesNumbers">The keep lines numbers.</param>
+    /// <returns>The remove comments result.</returns>
     public static List<string> RemoveComments(List<string> listOrString, bool line = true, bool block = true, bool keepLinesNumbers = false)
     {
         if (keepLinesNumbers)
@@ -133,6 +177,11 @@ public static partial class CSharpHelper
     }
 
     // Direct edit
+    /// <summary>
+    /// Remove line comments.
+    /// </summary>
+    /// <param name="list">The list.</param>
+    /// <returns>The remove line comments result.</returns>
     public static List<string> RemoveLineComments(List<string> list)
     {
         for (int i = list.Count - 1; i >= 0; i--)
@@ -149,6 +198,11 @@ public static partial class CSharpHelper
     const string strings = @"""((\\[^\n]|[^""\n])*)""";
     const string verbatimStrings = @"@(""[^""]*"")+";
 
+    /// <summary>
+    /// Remove block comments.
+    /// </summary>
+    /// <param name="str">The str.</param>
+    /// <returns>The remove block comments result.</returns>
     public static string RemoveBlockComments(string str)
     {
         str = Regex.Replace(str, blockComments + "|" + lineComments + "|" + strings + "|" + verbatimStrings, me =>
@@ -161,6 +215,16 @@ public static partial class CSharpHelper
         return str;
     }
 
+    /// <summary>
+    /// Get dictionary string object value.
+    /// </summary>
+    /// <typeparam name="Value">The type Value.</typeparam>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="keys">The keys.</param>
+    /// <param name="values">The values.</param>
+    /// <param name="nameDictionary">The name dictionary.</param>
+    /// <param name="argument">The argument.</param>
+    /// <returns>The get dictionary string object value result.</returns>
     public static string GetDictionaryStringObject<Value>(int tabCount, List<string> keys, List<Value> values, string nameDictionary, CSharpGeneratorArgs argument)
     {
         int localTabCount = 0;
@@ -181,6 +245,11 @@ public static partial class CSharpHelper
         return result;
     }
 
+    /// <summary>
+    /// Default value for type sq lite.
+    /// </summary>
+    /// <param name="type">The type.</param>
+    /// <returns>The default value for type sq lite result.</returns>
     public static string DefaultValueForTypeSqLite(string type)
     {
         if (type.Contains("."))

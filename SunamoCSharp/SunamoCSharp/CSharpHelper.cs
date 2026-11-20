@@ -1,10 +1,25 @@
 namespace SunamoCSharp;
 
+/// <summary>
+/// Represents the c sharp helper type.
+/// </summary>
 public static partial class CSharpHelper
 {
+    /// <summary>
+    /// The using constant.
+    /// </summary>
     public const string Using = "using ";
+    /// <summary>
+    /// The import constant.
+    /// </summary>
     public const string Import = "import ";
 
+    /// <summary>
+    /// Remove using.
+    /// </summary>
+    /// <param name="text">The text.</param>
+    /// <param name="removedUsings">The removed usings.</param>
+    /// <returns>The remove using result.</returns>
     public static string RemoveUsing(string text, CollectionWithoutDuplicatesDC<string> removedUsings)
     {
         foreach (var usingNamespace in removedUsings.Collection)
@@ -15,6 +30,10 @@ public static partial class CSharpHelper
         return text;
     }
 
+    /// <summary>
+    /// Add type to every file.
+    /// </summary>
+    /// <param name="BasePathsHelperVs">The base paths helper vs.</param>
     public static
         async Task
     AddTypeToEveryFile(string BasePathsHelperVs)
@@ -122,6 +141,12 @@ public static partial class CSharpHelper
         }
     }
 
+    /// <summary>
+    /// Remove namespace.
+    /// </summary>
+    /// <param name="item">The item.</param>
+    /// <param name="modifiedContent">The modified content.</param>
+    /// <returns>The remove namespace result.</returns>
     public static void RemoveNamespace(List<string> lines, CollectionWithoutDuplicatesDC<string>? removed, bool removeRegions = true)
     {
 #region Remove namespace and #region from original
@@ -164,6 +189,11 @@ public static partial class CSharpHelper
 #endregion
     }
 
+    /// <summary>
+    /// Remove namespace.
+    /// </summary>
+    /// <param name="item">The item.</param>
+    /// <returns>The remove namespace result.</returns>
     public static
         async Task<List<string>>
     RemoveNamespace(string item)
@@ -176,6 +206,10 @@ public static partial class CSharpHelper
         return lines;
     }
 
+    /// <summary>
+    /// Initializes a new instance of the set values as names to consts class.
+    /// </summary>
+    /// <param name="item">The item.</param>
     public static void SetValuesAsNamesToConsts(List<string> text)
     {
         for (int i = 0; i < text.Count; i++)
@@ -194,6 +228,11 @@ public static partial class CSharpHelper
         }
     }
 
+    /// <summary>
+    /// Is field variable const.
+    /// </summary>
+    /// <param name="';'">The ';'.</param>
+    /// <returns>The is field variable const result.</returns>
     public static (bool, string?) IsFieldVariableConst(string line)
     {
         CsKeywordsList.Init();

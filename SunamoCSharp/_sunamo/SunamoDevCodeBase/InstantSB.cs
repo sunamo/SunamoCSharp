@@ -5,6 +5,9 @@ namespace SunamoCSharp._sunamo.SunamoDevCodeBase;
 /// </summary>
 public class InstantSB
 {
+    /// <summary>
+    /// Gets or sets the string builder.
+    /// </summary>
     public StringBuilder StringBuilder { get; set; } = new StringBuilder();
     private string _tokensDelimiter;
 

@@ -5,9 +5,21 @@ namespace SunamoCSharp._sunamo.SunamoDevCodeBase;
 /// </summary>
 public class FromToTSHDC<T>
 {
+    /// <summary>
+    /// The empty.
+    /// </summary>
     public bool empty;
+    /// <summary>
+    /// The from l.
+    /// </summary>
     protected long fromL;
+    /// <summary>
+    /// The ft use.
+    /// </summary>
     public FromToUseDC ftUse = FromToUseDC.DateTime;
+    /// <summary>
+    /// The to l.
+    /// </summary>
     protected long toL;
 
     /// <summary>
@@ -38,12 +50,18 @@ public class FromToTSHDC<T>
         this.ftUse = ftUse;
     }
 
+    /// <summary>
+    /// The from.
+    /// </summary>
     public T from
     {
         get => (T)(dynamic)fromL;
         set => fromL = (long)(dynamic)value!;
     }
 
+    /// <summary>
+    /// The to.
+    /// </summary>
     public T to
     {
         get => (T)(dynamic)toL;

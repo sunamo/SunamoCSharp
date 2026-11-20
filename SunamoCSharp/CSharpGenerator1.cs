@@ -2,6 +2,15 @@ namespace SunamoCSharp;
 
 public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerator
 {
+    /// <summary>
+    /// Ctor.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="modifierType">The modifier type.</param>
+    /// <param name="constructorName">The constructor name.</param>
+    /// <param name="autoAssign">The auto assign.</param>
+    /// <param name="isBase">The is base.</param>
+    /// <param name="parameters">The parameters.</param>
     public void Ctor(int tabCount, ModifiersConstructor modifierType, string constructorName, bool autoAssign, bool isBase, params string[] parameters)
     {
         AddTab(tabCount);
@@ -40,6 +49,19 @@ public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerato
         sb.AppendLine();
     }
 
+    /// <summary>
+    /// Property.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="accessModifier">The access modifier.</param>
+    /// <param name="isStatic">The is static.</param>
+    /// <param name="returnType">The return type.</param>
+    /// <param name="name">The name.</param>
+    /// <param name="getImplementation">The get implementation.</param>
+    /// <param name="setImplementation">The set implementation.</param>
+    /// <param name="field">The field.</param>
+    /// <param name="shortGet">The short get.</param>
+    /// <param name="shortSet">The short set.</param>
     public void Property(int tabCount, AccessModifiers accessModifier, bool isStatic, string returnType, string name, object getImplementation, object setImplementation, string field, bool shortGet, bool shortSet)
     {
 #region MyRegion
@@ -106,6 +128,16 @@ public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerato
         sb.AppendLine();
     }
 
+    /// <summary>
+    /// Method.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="accessModifier">The access modifier.</param>
+    /// <param name="isStatic">The is static.</param>
+    /// <param name="returnType">The return type.</param>
+    /// <param name="name">The name.</param>
+    /// <param name="bodyContent">The body content.</param>
+    /// <param name="parametersDeclaration">The parameters declaration.</param>
     public void Method(int tabCount, AccessModifiers accessModifier, bool isStatic, string returnType, string name, string bodyContent, string parametersDeclaration)
     {
         AddTab(tabCount);
@@ -129,6 +161,12 @@ public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerato
         sb.AddItem(name);
     }
 
+    /// <summary>
+    /// Method.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="header">The header.</param>
+    /// <param name="bodyContent">The body content.</param>
     public void Method(int tabCount, string header, string bodyContent)
     {
         AddTab(tabCount);
@@ -140,6 +178,10 @@ public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerato
         sb.AppendLine();
     }
 
+    /// <summary>
+    /// Using.
+    /// </summary>
+    /// <param name="usingStatement">The using statement.</param>
     public void Using(string usingStatement)
     {
         if (!usingStatement.StartsWith("using "))
@@ -150,6 +192,11 @@ public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerato
         sb.AppendLine();
     }
 
+    /// <summary>
+    /// If.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="condition">The condition.</param>
     public void If(int tabCount, string condition)
     {
         AddTab(tabCount);
@@ -157,6 +204,10 @@ public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerato
         StartBrace(tabCount);
     }
 
+    /// <summary>
+    /// Else.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
     public void Else(int tabCount)
     {
         AddTab(tabCount);
@@ -164,6 +215,13 @@ public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerato
         StartBrace(tabCount);
     }
 
+    /// <summary>
+    /// Enum with comments.
+    /// </summary>
+    /// <param name="tabCount">The tab count.</param>
+    /// <param name="accessModifier">The access modifier.</param>
+    /// <param name="enumName">The enum name.</param>
+    /// <param name="memberComments">The member comments.</param>
     public void EnumWithComments(int tabCount, AccessModifiers accessModifier, string enumName, Dictionary<string, string> memberComments)
     {
         WriteAccessModifiers(accessModifier);
