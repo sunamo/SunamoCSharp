@@ -163,18 +163,18 @@ public static partial class CSharpHelper
 
     public static string GetDictionaryStringObject<Value>(int tabCount, List<string> keys, List<Value> values, string nameDictionary, CSharpGeneratorArgs argument)
     {
-        int pocetTabu = 0;
+        int localTabCount = 0;
         CSharpGenerator gen = new CSharpGenerator();
         gen.DictionaryFromTwoList<string, Value>(tabCount, nameDictionary, keys, values, argument);
         if (argument.CheckForNull)
         {
-            gen.If(pocetTabu, nameDictionary + " " + "== null");
+            gen.If(localTabCount, nameDictionary + " " + "== null");
         }
 
-        gen.GetDictionaryValuesFromDictionary<string, Value>(pocetTabu, nameDictionary, DictionaryHelper.GetDictionary<string, Value>(keys, values));
+        gen.GetDictionaryValuesFromDictionary<string, Value>(localTabCount, nameDictionary, DictionaryHelper.GetDictionary<string, Value>(keys, values));
         if (argument.CheckForNull)
         {
-            gen.EndBrace(pocetTabu);
+            gen.EndBrace(localTabCount);
         }
 
         string result = gen.ToString();
