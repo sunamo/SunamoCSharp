@@ -42,30 +42,6 @@ public static partial class CSharpHelper
         return lines;
     }
 
-    public static
-        async Task
-    ReplaceForConsts(string pathXlfKeys)
-    {
-        var count = SHGetLines.GetLines(
-            await
-        FileAsync.ReadAllTextAsync(pathXlfKeys)).ToList();
-        for (int i = 0; i < count.Count; i++)
-        {
-            var argument = count[i];
-            if (argument.Contains(CSharpParser.StaticReadonlyModifier))
-            {
-                if (!argument.Contains("const") && !argument.Contains("class"))
-                {
-                    argument = SHReplace.ReplaceOnce(argument, "static ", string.Empty);
-                    argument = SHReplace.ReplaceOnce(argument, "readonly ", string.Empty);
-                    count[i] = SHReplace.ReplaceOnce(argument, CSharpParser.StaticReadonlyModifier, CSharpParser.PublicModifier + "const ");
-                }
-            }
-        }
-
-        await FileAsync.WriteAllLinesAsync(pathXlfKeys, count);
-    }
-
     public static string GetConsts(List<string> list, bool? toCamelConvention)
     {
         return GetConsts(null!, list, toCamelConvention);
