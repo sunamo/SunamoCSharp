@@ -27,8 +27,7 @@ public abstract class GeneratorCodeAbstract
         sb.AddItem(AddTab(tabCount, text));
     }
 
-    // EN: Ends a brace and adds a new line. After calling this method for elements like methods, properties, or constructors, it's recommended to also call sb.AppendLine().
-    // CZ: Ukončí složenou závorku a přidá nový řádek. Za voláním této metody pokud ukončuje nějaký celek jako jsou metody, vlastnosti nebo konstruktor je vhodné volat ještě sb.AppendLine().
+    // Ends a brace and adds a new line. After calling this method for elements like methods, properties, or constructors, it's recommended to also call sb.AppendLine().
     /// <summary>
     /// Appends the closing brace.
     /// </summary>
@@ -38,8 +37,7 @@ public abstract class GeneratorCodeAbstract
         sb.AppendLine("}");
     }
 
-    // EN: Starts a brace. This is the only method here that adds a new line at the beginning.
-    // CZ: Přidá nový řádek, složenou závorku. Je to jediná zdejší metoda která na začátku přidává nový řádek.
+    // Starts a brace. This is the only method here that adds a new line at the beginning.
     /// <summary>
     /// Appends the opening brace.
     /// </summary>
@@ -74,8 +72,7 @@ public abstract class GeneratorCodeAbstract
         sb.AppendLine();
     }
 
-    // EN: Appends a formatted line with tabs
-    // CZ: Přidá formátovaný řádek s tabulátory
+    // Appends a formatted line with tabs
     /// <summary>
     /// Appends the text and a new line.
     /// </summary>
@@ -87,8 +84,7 @@ public abstract class GeneratorCodeAbstract
             sb.AppendLine(AddTab(tabCount, format));
     }
 
-    // EN: Appends formatted text with tabs (without newline)
-    // CZ: Přidá formátovaný text s tabulátory (bez nového řádku)
+    // Appends formatted text with tabs (without newline)
     /// <summary>
     /// Appends the text.
     /// </summary>
@@ -100,8 +96,7 @@ public abstract class GeneratorCodeAbstract
             sb.AddItem(AddTab(tabCount, format));
     }
 
-    // EN: Returns the generated code and resets the string builder
-    // CZ: Vrátí vygenerovaný kód a resetuje string builder
+    // Returns the generated code and resets the string builder
     /// <summary>
     /// Returns the generated text.
     /// </summary>
@@ -120,8 +115,7 @@ public abstract class GeneratorCodeAbstract
         for (var i = 0; i < tabCount; i++) sb.AddRaw("\t");
     }
 
-    // EN: Adds tabs to each line of the text
-    // CZ: Přidá tabulátory na začátek každého řádku textu
+    // Adds tabs to each line of the text
     /// <summary>
     /// Adds the indentation.
     /// </summary>

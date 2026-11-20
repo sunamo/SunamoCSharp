@@ -1,7 +1,6 @@
 namespace SunamoCSharp;
 
-// EN: Variable names have been checked and replaced with self-descriptive names
-// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+// Variable names have been checked and replaced with self-descriptive names
 public static partial class CSharpHelper
 {
     public static string GetInnerContentOfCodeElementClass(List<string> lines)
