@@ -18,9 +18,6 @@ public static partial class CSharpHelper
         return csg.ToString();
     }
 
-    //public static string GetDictionary(string nameDictionary)
-    //{
-    //}
     public static string RemoveXmlDocCommentsExceptSummary(List<string> list, ref bool removedAnything)
     {
         removedAnything = false;
@@ -133,16 +130,13 @@ public static partial class CSharpHelper
             listOrString = SHGetLines.GetLines(RemoveBlockComments(string.Join(Environment.NewLine, listOrString)));
         }
 
-        //var list = CastHelper.ToListString(listOrString);
         //jak jsem mohl být takový debil argument dát to tady - na co tady trimovat?
-        //CA.Trim(listOrString);
         return listOrString;
     }
 
     // Direct edit
     public static List<string> RemoveLineComments(List<string> list)
     {
-        //List<string> list = CastHelper.ToListString(listOrString);
         for (int i = list.Count - 1; i >= 0; i--)
         {
             list[i] = SHParts.RemoveAfterFirst(list[i], "//");

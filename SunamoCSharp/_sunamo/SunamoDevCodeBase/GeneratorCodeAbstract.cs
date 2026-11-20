@@ -34,9 +34,7 @@ public abstract class GeneratorCodeAbstract
     /// </summary>
     public void EndBrace(int tabCount)
     {
-        //sb.AppendLine();
         AddTab(tabCount);
-        //sb.AppendLine();
         sb.AppendLine("}");
     }
 
@@ -48,10 +46,8 @@ public abstract class GeneratorCodeAbstract
     public void StartBrace(int tabCount)
     {
         // Line always ending previous command
-        //sb.AppendLine();
         AddTab(tabCount);
         sb.AppendLine("{");
-        //sb.AppendLine();
     }
 
     /// <summary>
@@ -121,7 +117,6 @@ public abstract class GeneratorCodeAbstract
     /// </summary>
     public void AddTab(int tabCount)
     {
-        //tabCount += 1;
         for (var i = 0; i < tabCount; i++) sb.AddRaw("\t");
     }
 

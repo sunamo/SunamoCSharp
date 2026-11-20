@@ -14,7 +14,6 @@ public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerato
         if (args.AddHyphens)
             for (var i = 0; i < list.Count; i++)
                 list[i] = SH.WrapWithQm(list[i]);
-        //list = CA.WrapWith(list, "\"");
         if (genericType == "string")
         {
             if (args.UseCA)
@@ -109,7 +108,6 @@ public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerato
         if (objectName != null)
             objectPrefix = objectName + ".";
         if (args.AddHyphens)
-            //values = CA.WrapWith(values, "\"");
             for (var i = 0; i < values.Count; i++)
                 values[i] = SH.WrapWithBs(values[i]);
         AddTab(tabCount);

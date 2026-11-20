@@ -7,9 +7,6 @@ internal class ConvertPascalConvention
 {
     // Converts string to PascalCase convention
     // Will include numbers
-    // hello world = HelloWorld
-    // Hello world = HelloWorld
-    // helloWorld = HelloWorld
     /// <summary>
     /// Converts the text to PascalCase.
     /// </summary>

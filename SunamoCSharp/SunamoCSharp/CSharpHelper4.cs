@@ -61,7 +61,6 @@ public static partial class CSharpHelper
 
     public static bool IsKeyword(string con)
     {
-        //CsKeywords.Init();
         if (CsKeywordsList.Modifier.Contains(con))
         {
             return true;

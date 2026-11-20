@@ -134,7 +134,6 @@ public partial class CSharpGenerator : GeneratorCodeAbstract //, ICSharpGenerato
         AddTab(tabCount);
         sb.AddItem(header);
         StartBrace(tabCount);
-        //AddTab(tabCount + 1);
         sb.AddItem(bodyContent);
         sb.AppendLine("");
         EndBrace(tabCount);

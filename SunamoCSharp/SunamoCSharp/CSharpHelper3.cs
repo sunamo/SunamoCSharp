@@ -79,7 +79,6 @@ public static partial class CSharpHelper
     }
 
     // A1 can be null
-    // A3 null = not use Pascal convention
     // GenerateConstants - const without value
     // GetConsts - static readonly with value
     public static string GetConsts(List<string> names, List<string> list, bool? toCamelConventionFirstCharLower, Type type)
@@ -192,8 +191,6 @@ public static partial class CSharpHelper
                 var parameter = ConvertPascalConvention.ToConvention(item);
                 StringBuilder sb2 = new StringBuilder(parameter);
                 sb2[0] = char.ToUpper(sb2[0]);
-                //p = SH.FirstCharLower(parameter);
-                //DebugLogger.Instance.WriteLine(parameter);
                 data.Add(sb2.ToString(), "string");
             }
         }
