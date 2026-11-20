@@ -12,8 +12,8 @@ internal partial class FS
     /// </summary>
     internal static string InsertBetweenFileNameAndExtension(string originalPath, string textToInsert)
     {
-        // Cesta by se zde hodila kvůli FS.CiStorageFile
-        // nicméně StorageFolder nevím zda se používá, takže to bude umět i bez toho
+        // The path would be useful here because of FS.CiStorageFile
+        // however I do not know whether StorageFolder is used, so it will work even without it
         var originalPathString = originalPath.ToString();
         string fileName = Path.GetFileNameWithoutExtension(originalPathString);
         string extension = Path.GetExtension(originalPathString);

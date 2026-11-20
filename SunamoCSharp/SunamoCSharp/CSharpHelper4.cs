@@ -3,7 +3,7 @@ namespace SunamoCSharp;
 // Variable names have been checked and replaced with self-descriptive names
 public static partial class CSharpHelper
 {
-    // CsKeywordsList je internal — veřejný vstup pro konzumenty balíčku
+    // CsKeywordsList is internal - public entry point for package consumers
     /// <summary>
     /// Initializes the C# keyword lists (public entry point, because CsKeywordsList is internal).
     /// </summary>
@@ -36,12 +36,12 @@ public static partial class CSharpHelper
             case "ulong":
                 return 0;
             case "DateTime":
-                // Původně tu bylo MinValue kvůli SQLite ale dohodl jsem se že SQLite už nebudu používat argument proto si ušetřím value kódu práci text MSSQL
+                // MinValue was originally here because of SQLite but I agreed with myself that I will no longer use SQLite, so with this argument I save value code work text MSSQL
                 return "new(1900, 1, 1)";
             case "char":
                 throw new Exception(type);
             case "byte" + "[]":
-                // Podporovaný typ pouze value desktopových aplikacích, kde není lsožka sbf
+                // Supported type only in desktop applications where there is no sbf folder
                 return null!;
         }
 

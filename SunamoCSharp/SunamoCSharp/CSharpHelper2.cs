@@ -82,11 +82,11 @@ public static partial class CSharpHelper
                     if (current == '*' && next == '/')
                     {
                         inMultiLineComment = false;
-                        reader.Read(); // Přečteme '/'
+                        reader.Read(); // We read '/'
                     }
                     else if (current == '\n')
                     {
-                        output += current; // Přidáme nový řádek do výstupu
+                        output += current; // We add a new line to the output
                     }
                 }
                 else
@@ -94,12 +94,12 @@ public static partial class CSharpHelper
                     if (current == '/' && next == '/')
                     {
                         inSingleLineComment = true;
-                        reader.Read(); // Přečteme '/'
+                        reader.Read(); // We read '/'
                     }
                     else if (current == '/' && next == '*')
                     {
                         inMultiLineComment = true;
-                        reader.Read(); // Přečteme '*'
+                        reader.Read(); // We read '*'
                     }
                     else
                     {
@@ -129,7 +129,7 @@ public static partial class CSharpHelper
             listOrString = SHGetLines.GetLines(RemoveBlockComments(string.Join(Environment.NewLine, listOrString)));
         }
 
-        //jak jsem mohl být takový debil argument dát to tady - na co tady trimovat?
+        // how could I be such an idiot to put the argument here - what is there to trim here?
         return listOrString;
     }
 
@@ -198,10 +198,10 @@ public static partial class CSharpHelper
             case "REAL":
                 return "0.0";
             case "DATETIME":
-                // Původně tu bylo MinValue kvůli SQLite ale dohodl jsem se že SQLite už nebudu používat argument proto si ušetřím value kódu práci text MSSQL
+                // MinValue was originally here because of SQLite but I agreed with myself that I will no longer use SQLite, so with this argument I save value code work text MSSQL
                 return "DateTime.MinValue";
             case "BLOB":
-                // Podporovaný typ pouze value desktopových aplikacích, kde není lsožka sbf
+                // Supported type only in desktop applications where there is no sbf folder
                 return "null";
             default:
                 ThrowEx.NotImplementedCase(type);
