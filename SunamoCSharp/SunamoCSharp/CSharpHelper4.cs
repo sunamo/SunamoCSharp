@@ -1,6 +1,5 @@
 namespace SunamoCSharp;
 
-// Variable names have been checked and replaced with self-descriptive names
 public static partial class CSharpHelper
 {
     // CsKeywordsList is internal - public entry point for package consumers

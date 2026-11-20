@@ -1,6 +1,5 @@
 namespace SunamoCSharp;
 
-// Variable names have been checked and replaced with self-descriptive names
 public static partial class CSharpHelper
 {
     public static string GetCtorInner(int tabCount, IList values)

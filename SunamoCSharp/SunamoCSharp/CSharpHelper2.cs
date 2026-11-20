@@ -1,6 +1,5 @@
 namespace SunamoCSharp;
 
-// Variable names have been checked and replaced with self-descriptive names
 public static partial class CSharpHelper
 {
     public static string GetDictionaryValuesFromTwoList<Key, Value>(int tabCount, string nameDictionary, List<Key> keys, List<Value> values, CSharpGeneratorArgs argument) where Key : notnull

@@ -1,4 +1,3 @@
-// variables names: ok
 namespace SunamoDevCode.SunamoCSharp.Values;
 
 public class CSharpConsts
